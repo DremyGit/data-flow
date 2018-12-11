@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore } from '../custom/custom-redux';
 import { connect, Provider } from 'react-redux';
 
 // 1. Reducer

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
-import { connect, Provider } from 'react-redux';
+import { createStore, applyMiddleware } from '../custom/custom-redux';
+import { connect, Provider } from '../custom/custom-react-redux';
 
 // 0. Middlewares
 const thunkMiddleware = store => next => action => {
@@ -37,7 +37,7 @@ function sleep(time) {
     setTimeout(resolve, time) 
   })
 }
-function increaseAsync(time) {
+function increaseAsync() {
   return dispatch => {
     sleep(1000).then(() => {
       dispatch({ type: 'INCREMENT' })

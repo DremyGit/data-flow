@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
-import { connect, Provider } from 'react-redux';
+import { createStore, applyMiddleware } from '../custom/custom-redux';
+import { connect, Provider } from '../custom/custom-react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { call, put, takeEvery } from 'redux-saga/effects'
 

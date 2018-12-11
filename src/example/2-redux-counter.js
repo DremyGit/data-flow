@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore } from '../custom/custom-redux';
 
 // 1. Reducer
 const counter = (state = 0, action) => {
@@ -28,14 +28,16 @@ function decrease() {
 const store = createStore(counter)
 
 // 4 Render
-const render = () => ReactDOM.render(
-  <div>
-    <h2>{store.getState()}</h2>
-    <button onClick={() => store.dispatch(increment) }>+</button>
-    <button onClick={() => store.dispatch(decrease()) }>-</button>
-  </div>,
-  document.getElementById('root')
-)
+function render() {
+  ReactDOM.render(
+    <div>
+      <h2>{store.getState()}</h2>
+      <button onClick={() => store.dispatch(increment) }>+</button>
+      <button onClick={() => store.dispatch(decrease()) }>-</button>
+    </div>,
+    document.getElementById('root')
+  )
+}
 
 render()
 store.subscribe(render)
